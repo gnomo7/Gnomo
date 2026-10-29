@@ -1,45 +1,64 @@
-# Gnomo Vegas
+# Gnomo Vegas — slots, visitantes, resultados e Jogo Secreto 777
 
-Projeto estático para publicar no GitHub e no Netlify. Não precisa de servidor próprio, Render, banco de dados ou comando de build.
+Projeto estático para GitHub + Netlify. Não exige comando de build nem servidor próprio para os jogos individuais.
 
 ## Publicar no Netlify
 
-### Opção A — enviar o projeto diretamente
-1. Baixe e extraia `gnomo-vegas-pronto-github-netlify.zip`.
-2. No Netlify, crie um site por implantação manual (deploy manual).
-3. Arraste a pasta extraída para a área de implantação. Se a interface pedir arquivos, envie o conteúdo da pasta.
-4. O arquivo `index.html` precisa ficar na raiz publicada.
+1. Baixe e extraia o ZIP.
+2. Envie `index.html`, `netlify.toml`, `README.md` e `.nojekyll` para a raiz do repositório no GitHub.
+3. No Netlify, importe esse repositório.
+4. Deixe **Build command** vazio e configure **Publish directory** como `.`.
+5. Publique.
 
-### Opção B — GitHub conectado ao Netlify
-1. Crie um repositório no GitHub.
-2. Envie para a raiz do repositório os arquivos `index.html`, `netlify.toml`, `README.md` e `.nojekyll`.
-3. No Netlify, escolha **Add new site / Import an existing project** e conecte o repositório.
-4. Configure **Build command** vazio e **Publish directory** como `.`.
-5. Publique o site.
+## Contas e chaves predefinidas
 
-## O que está incluído
+Todos os slots aparecem como ocupados. Selecione um slot, informe a chave e toque em **Entrar na conta**.
 
-- Interface responsiva do Gnomo Vegas.
-- Jogos individuais executados no navegador.
-- Criação de perfis locais com até 10 slots neste navegador.
-- Progresso, fichas e itens salvos localmente.
-- Perfil especial Chocco com cosméticos exclusivos e destaque no ranking local.
-- Compartilhamento de perfil por link e lista local de amigos.
-- Ranking montado com perfis locais, perfis compartilhados e perfis de referência.
-- Sons sintetizados no navegador, ativados após interação do usuário.
+| Slot | Nick | Chave |
+|---:|---|---|
+| 01 | Chocco | `chocco777@` |
+| 02 | LulaDoPix | `GV-7K2P-91MX` |
+| 03 | FlavioBolso | `LB-4Q8N-62TZ` |
+| 04 | VorcaroJackpot | `NR-9W3F-28KA` |
+| 05 | XandaoDaRoleta | `VS-5D7J-83PL` |
+| 06 | NikolasNoPix | `PF-2H6M-49RX` |
+| 07 | TarcisioTurbo | `ZR-8B4T-17QN` |
+| 08 | AndersonNeiff | `MF-3N9C-56WD` |
+| 09 | JanjaNaRoleta | `GM-6P1V-74YS` |
+| 10 | TrumpDoTruco | `DK-4X8L-35BJ` |
+
+### Visitante
+
+Na tela de entrada, toque em **Entrar como visitante**. O site gera um nick automático; não é necessária chave. O perfil de visitante fica salvo localmente no navegador.
+
+## Baixar resultado e histórico
+
+1. Entre em uma conta ou como visitante.
+2. Abra qualquer jogo e conclua uma jogada/rodada.
+3. Na mesa, toque em **Baixar resultado desta rodada** para baixar um arquivo HTML leve e personalizado.
+4. Toque em **Baixar histórico da sessão** para baixar todos os resultados registrados na sessão atual (até 200 entradas).
+5. O relatório mostra nick, pontuação, saldo fictício, número das rodadas, data/hora e resultados. O arquivo abre sem internet e pode ser impresso ou salvo em PDF pelo navegador.
+
+## Jogo Secreto 777
+
+1. Abra **Jogo Secreto 777**.
+2. Digite sua resposta e toque em **Confirmar**.
+3. Depois de qualquer resposta enviada, correta ou incorreta, aparece **Baixar resposta do Jogo 777**.
+4. O arquivo registra a pergunta, o que o jogador respondeu, se acertou e qual era a resposta correta. Resposta correta concede os pontos de demonstração indicados no jogo.
+
+## Incluído
+
+- Interface responsiva escura, verde-lima e dourada.
+- Jogos individuais, 10 slots predefinidos e entrada de visitante.
+- Conta Chocco com cosméticos especiais e destaque no ranking local.
+- Perfis locais, amigos por link e ranking local.
+- Exportação individual de rodada e relatório do histórico da sessão.
+- Exportação do registro do Jogo Secreto 777 depois que a pessoa responde.
 
 ## Limitações importantes
 
-- Não há partidas multiplayer nem sincronização global em tempo real.
-- Amigos são adicionados por meio de um retrato do perfil codificado no link. Para atualizar os dados, compartilhe um novo link.
-- Perfis, progresso e amigos ficam no armazenamento do navegador (`localStorage`). Limpar os dados do navegador pode apagar essas informações; outro dispositivo começa com dados próprios.
-- O link de amizade não contém a senha, mas os dados do perfil incluídos nele são públicos para quem receber o link.
-- A senha especial Chocco é verificada no código do navegador; isso serve para o modo demonstrativo/local, não como autenticação segura para dados privados ou competitivos.
-- O ranking e os perfis de referência são locais/demonstrativos, não um ranking global verificado.
-
-## Arquivos
-
-- `index.html` — aplicação completa.
-- `netlify.toml` — configuração de publicação e cabeçalhos HTTP.
-- `.nojekyll` — evita processamento Jekyll se o repositório também for publicado pelo GitHub Pages.
-- `README.md` — estas instruções.
+- Os resultados exportados são registros locais da interface, não certificados independentes.
+- Contas, pontuação, fichas e amigos não sincronizam globalmente entre dispositivos; o histórico de jogo fica na sessão do navegador.
+- Pontos e créditos são fictícios, sem valor monetário.
+- Por ser um site estático, as chaves aparecem no código-fonte publicado. Elas organizam os slots demonstrativos, mas não protegem contas reais como faria uma autenticação de servidor.
+- Limpar os dados do navegador pode apagar o progresso local.
